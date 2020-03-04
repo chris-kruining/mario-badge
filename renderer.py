@@ -28,10 +28,10 @@ class Renderer:
                     continue
             
                 for x in range(ex, ex + entity.w):
-                    if entity.wrap == True:
-                        frame[ (y * self.w) + (x % self.w)] = entity.c
-                    elif x >= self.w or x < 0:
+                    if entity.wrap == False && x >= self.w or x < 0:
                         continue
+                    elif entity.wrap == True:
+                        frame[ (y * self.w) + (x % self.w)] = entity.c
                     else:
                         frame[ (y * self.w) + x] = entity.c
             
